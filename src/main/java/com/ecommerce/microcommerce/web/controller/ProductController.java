@@ -103,6 +103,14 @@ public class ProductController {
         return productDao.chercherUnProduitCher(400);
     }
 
+  //calcule la marge de chaque produit
+    @ApiOperation(value = "calcule la marge de chaque produit (différence entre prix d‘achat et prix de vente)")
+    @GetMapping(value = "/Produits/AdminProduits")
 
+    public List<Product> calculerMargeProduit() {
+
+        List<Product> produits = productDao.calculerMargeProduit();
+        return produits;
+    }
 
 }
