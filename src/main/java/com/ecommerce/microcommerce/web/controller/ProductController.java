@@ -112,5 +112,14 @@ public class ProductController {
         List<Product> produits = productDao.calculerMargeProduit();
         return produits;
     }
+	//la liste de tous les produits triés par nom croissant 
+    @ApiOperation(value = " retournera la liste de tous les produits triés par nom croissant ")
+    @GetMapping(value = "/Produits/trieProduit")
+
+    public List<Product> trierProduitsParOrdreAlphabetique() {
+
+        List<Product> produits = productDao.findByOrderByNomAsc();
+        return (produits);
+    }
 
 }
